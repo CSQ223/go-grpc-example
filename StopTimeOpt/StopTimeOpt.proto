@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "grpc-example/StopTimeOpt";
+
+package StopTimeOpt;
+
+service MetroOpt {
+    rpc StopTimeOpt (StopTimeOptRequest) returns (StopTimeOptResponse) {};
+}
+
+
+message StopTimeOptRequest {
+    int32 min_time = 1;
+    int32 max_time = 2;
+}
+
+message StopTimeOptResponse {
+    int32 result_code = 1;
+    int32 stop_time = 2;
+}
